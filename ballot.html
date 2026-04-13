@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UE Election – Ballot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <div id="app-header"></div>
+
+  <div class="session-tabs">
+    <div class="session-tab active" id="tab-csc" onclick="switchSession('csc')">
+      <div class="tab-label">SESSION 1</div>
+      <div class="tab-name">Central Student Council</div>
+    </div>
+    <div class="session-tab" id="tab-ensc" onclick="switchSession('ensc')">
+      <div class="tab-label">SESSION 2</div>
+      <div class="tab-name">EN Student Council</div>
+    </div>
+  </div>
+
+  <div class="party-legend">
+    <span><span class="party-dot tugon"></span>Tugon</span>
+    <span><span class="party-dot tinig"></span>Tinig</span>
+    <span style="color:#999; font-size:.78rem; margin-left:8px;">Choose one candidate per position</span>
+  </div>
+
+  <div id="session-csc" class="ballot-wrapper">
+    <div class="ballot-scroll">
+      <div class="ballot-header-card">
+        <div class="color-stripe">
+          <div class="s1"></div>
+          <div class="s2"></div>
+          <div class="s3"></div>
+        </div>
+        <div class="ballot-header-body">
+          <div class="step-tag">Step 2 of 4</div>
+          <h2>COLLEGE COUNCIL ELECTION</h2>
+          <p>For each position below, select <strong>one candidate</strong>. You are free to vote across both parties. Your choice, your vote.</p>
+        </div>
+        <div class="progress-row">
+          <span id="csc-voted-label">0 of 6 Positions Voted</span>
+          <span id="csc-remaining-label">6 remaining</span>
+        </div>
+        <div class="ballot-progress">
+          <div class="ballot-progress-fill" id="csc-progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="csc-positions"></div>
+
+      <div id="csc-warning" class="warning-box" style="display:none;">
+        ⚠️ Vote for all 6 CSC positions before continuing to your Department ballot.
+      </div>
+
+      <button class="btn-next" id="csc-next-btn" onclick="goToEnsc()">Next: Department Ballot</button>
+      <button class="btn-secondary" onclick="window.location.href='index.html'">Back to Verification</button>
+      <div style="height:20px;"></div>
+    </div>
+  </div>
+
+  <div id="session-ensc" class="ballot-wrapper" style="display:none;">
+    <div class="ballot-scroll">
+      <div class="ballot-header-card">
+        <div class="color-stripe">
+          <div class="s1"></div>
+          <div class="s2"></div>
+          <div class="s3"></div>
+        </div>
+        <div class="ballot-header-body">
+          <div class="step-tag">Step 2 of 4</div>
+          <h2>COLLEGE COUNCIL ELECTION</h2>
+          <p>For each position below, select <strong>one candidate</strong>. You are free to vote across both parties. Your choice, your vote.</p>
+        </div>
+        <div class="progress-row">
+          <span id="ensc-voted-label">0 of 6 Positions Voted</span>
+          <span id="ensc-remaining-label">6 remaining</span>
+        </div>
+        <div class="ballot-progress">
+          <div class="ballot-progress-fill" id="ensc-progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="ensc-positions"></div>
+
+      <div id="ensc-warning" class="warning-box" style="display:none;">
+        ⚠️ Vote for all 6 ENSC positions before proceeding to review.
+      </div>
+
+      <button class="btn-next" id="ensc-next-btn" onclick="goToReview()">Proceed to Review</button>
+      <button class="btn-secondary" onclick="switchSession('csc')">Back to CSC Ballot</button>
+      <div style="height:20px;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('app-header').innerHTML = renderHeader(2);
+
+    const voter = getVoterInfo();
+    if (!voter.name) {
+      window.location.href = 'index.html';
+    }
+
+    const cscContainer = document.getElementById('csc-positions');
+    CSC_POSITIONS.forEach(pos => {
+      cscContainer.innerHTML += buildPositionCard(pos, 'csc');
+    });
+
+    const enscContainer = document.getElementById('ensc-positions');
+    ENSC_POSITIONS.forEach(pos => {
+      enscContainer.innerHTML += buildPositionCard(pos, 'ensc');
+    });
+
+    updateProgress('csc');
+    updateProgress('ensc');
+
+    function switchSession(sess) {
+      document.getElementById('session-csc').style.display = sess === 'csc' ? 'block' : 'none';
+      document.getElementById('session-ensc').style.display = sess === 'ensc' ? 'block' : 'none';
+      document.getElementById('tab-csc').classList.toggle('active', sess === 'csc');
+      document.getElementById('tab-ensc').classList.toggle('active', sess === 'ensc');
+    }
+
+    function goToEnsc() {
+      const votes = getVotes();
+      const cscDone = CSC_POSITIONS.every(p => votes[p.id]);
+      if (!cscDone) {
+        document.getElementById('csc-warning').style.display = 'block';
+        return;
+      }
+      switchSession('ensc');
+    }
+
+    function goToReview() {
+      const votes = getVotes();
+      const enscDone = ENSC_POSITIONS.every(p => votes[p.id]);
+      if (!enscDone) {
+        document.getElementById('ensc-warning').style.display = 'block';
+        return;
+      }
+      window.location.href = 'review.html';
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
