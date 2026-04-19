@@ -220,6 +220,24 @@ body {
   margin-bottom: 18px;
 }
 
+.btn-return {
+  width: 100%;
+  background: #b01a2e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 13px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Barlow', sans-serif;
+}
+
+.btn-return:hover {
+  background: #c43145;
+}
+
 .btn-proceed {
   width: 100%;
   background: #aaa;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UE Election – No Ongoing Election</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+    <link rel="icon" type="image/x-icon" href="images/logo.png"/>
+</head>
+<body>
+
+  <div id="app-header"></div>
+
+  <div class="verify-bg">
+    <div class="verify-card">   
+      <div class="color-stripe">
+        <div class="s1"></div>
+        <div class="s2"></div>
+        <div class="s3"></div>
+      </div>
+      <div class="verify-body">
+        <div class="d-flex justify-content-center">
+          <svg class="w-50 d-flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><path d="m32 2c-16.568 0-30 13.432-30 30s13.432 30 30 30 30-13.432 30-30-13.432-30-30-30m5.513 44.508l-5.514-9.894-5.825 9.894h-7.048l9.331-14.783-8.878-14.232h7.244l5.175 9.449 5.317-9.449h7.008l-8.878 13.996 9.429 15.02h-7.361z" fill="#b01a2e"/></svg>
+        </div>
+        <br>
+        <h2 class="text-center">NO ONGOING ELECTION</h2>
+        <p>There is currently no ongoing election. Please return at a later date when there is an ongoing election.</p>
+
+        <button class="btn-return" enabled onclick="goback()">Return</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('app-header').innerHTML = renderHeader(0);
+
+    function goback() {
+      window.location.href = "https://apps.ue.edu.ph/portals/sp/";
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
