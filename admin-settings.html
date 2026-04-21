@@ -1,260 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UE Election – Student Verification</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>UE Election – Student Verification</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
     <link rel="icon" type="image/x-icon" href="images/logo.png"/>
 </head>
 <body>
 
 <div id="app-header"></div>
-
-<div class="review-page">
-    <div class="review-card">
-        <h3>Election Results</h3>
-        <p>An actively updating view of the ongoing election.</p>
-
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="results-tab" data-bs-toggle="tab" data-bs-target="#results" type="button" role="tab">CSC</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#eng" type="button" role="tab">ENG</button>
-        </li>
-        </ul>
-
-
-        <div class="tab-content" id="csc">
-            <div class="tab-pane fade show active" id="results" role="tabpanel">
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="true" aria-controls="c1">
-                                    PRESIDENT
-                                </button>
-                            </h2>
-                            <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-csc1"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="settings-page">
+    <div class="settings-card">
+        <div>
+            <h6>Election Status</h6>
+            Manage the status of the current election
+            <hr>
+            <div class="d-flex flex-row gap-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="electionStatus" id="active" value="active" checked>
+                    <label class="form-check-label">Active</label>
                 </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="true" aria-controls="c2">
-                                    VICE PRESIDENT
-                                </button>
-                            </h2>
-                            <div id="c2" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-csc2"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="true" aria-controls="c3">
-                                    SECRETARY
-                                </button>
-                            </h2>
-                            <div id="c3" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-csc3"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4" aria-expanded="true" aria-controls="c4">
-                                    TREASURER
-                                </button>
-                            </h2>
-                            <div id="c4" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-csc4"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5" aria-expanded="true" aria-controls="c5">
-                                    AUDITOR
-                                </button>
-                            </h2>
-                            <div id="c5" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-csc5"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6" aria-expanded="true" aria-controls="c6">
-                                    PUBLIC RELATIONS OFFICER
-                                </button>
-                            </h2>
-                            <div id="c6" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-csc6"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="electionStatus" id="inactive" value="inactive">
+                    <label class="form-check-label">Inactive</label>
                 </div>
             </div>
+            
+        </div>
+    </div>
+</div>
+<div class="settings-page">
+    <div class="settings-card">
+        <div>
+            <h6>Active Parties</h6>
+            Manage Active Parties<br><br>
+            <button class="btn btn-sm text-white" style="background-color:forestgreen;" data-bs-toggle="modal" data-bs-target="#partyModal">ADD NEW PARTY</button>
+            <div id="party-list" class="list-group list-group-flush mt-3"></div>
+        </div>
+    </div>
+</div>
+<div class="settings-page">
+    <div class="settings-card">
+        <div>
+            <h6>Active Candidates</h6>
+            Manage Active Candiates<br><br>
+            <button class="btn btn-sm text-white" style="background-color:forestgreen;" data-bs-toggle="modal" data-bs-target="#candidateModal">ADD NEW CANDIDATE</button>
+            <div id="candidate-list" class="list-group list-group-flush mt-3"></div>
+        </div>
+    </div>
+</div>
 
-            <div class="tab-pane fade" id="eng" role="tabpanel">
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="true" aria-controls="c1">
-                                    PRESIDENT (College of Engineering)
-                                </button>
-                            </h2>
-                            <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-eng1"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="true" aria-controls="c2">
-                                    VICE PRESIDENT (College of Engineering)
-                                </button>
-                            </h2>
-                            <div id="c2" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-eng2"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="true" aria-controls="c3">
-                                    SECRETARY (College of Engineering)
-                                </button>
-                            </h2>
-                            <div id="c3" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-eng3"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4" aria-expanded="true" aria-controls="c4">
-                                    TREASURER (College of Engineering)
-                                </button>
-                            </h2>
-                            <div id="c4" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-eng4"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5" aria-expanded="true" aria-controls="c5">
-                                    AUDITOR (College of Engineering)
-                                </button>
-                            </h2>
-                            <div id="c5" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-eng5"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-info-row flex-column">
-                    <div class="accordion" id="electionAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6" aria-expanded="true" aria-controls="c6">
-                                    PUBLIC RELATIONS OFFICER (College of Engineering)
-                                </button>
-                            </h2>
-                            <div id="c6" class="accordion-collapse collapse show" data-bs-parent="#electionAccordion">
-                                <div class="accordion-body">
-                                    <div id="vote-chart-eng6"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="modal fade" id="partyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" id="partyForm">
+        <div class="modal-header">
+            <h5 class="modal-title">Add Party</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label class="form-label">Party Name</label>
+                <input type="text" class="form-control" id="partyName" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Slogan</label>
+                <input type="text" class="form-control" id="partySlogan" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Color</label>
+                <input type="color" class="form-control form-control-color" id="partyColor" value="#ff0000">
             </div>
         </div>
-
-        
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+        </form>
     </div>
+</div>
 
-    <!-- Tab navigation -->
+<div class="modal fade" id="candidateModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" id="candidateForm">
+        <div class="modal-header">
+            <h5 class="modal-title">Add Candidate</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+            <label class="form-label">Candidate Name</label>
+            <input type="text" class="form-control" id="candidateName" required>
+            </div>
 
+            <div class="mb-3">
+            <label class="form-label">Position</label>
+            <select class="form-select" id="candidatePosition" required>
+                <option value="">Select position</option>
+                <option value="President">President</option>
+                <option value="Vice President">Vice President</option>
+                <option value="Secretary">Secretary</option>
+                <option value="Treasurer">Treasurer</option>
+                <option value="Auditor">Auditor</option>
+                <option value="PRO">Public Relations Officer</option>
+            </select>
+            </div>
 
+            <div class="mb-3">
+            <label class="form-label">Ballot Category</label>
+            <select class="form-select" id="candidateCategory" required>
+                <option value="">Select category</option>
+                <option value="Central Student Council">Central Student Council</option>
+                <option value="College of Engineering Council">College of Engineering Council</option>
+            </select>
+            </div>
+
+            <div class="mb-3">
+            <label class="form-label">Party</label>
+            <input type="text" class="form-control" id="candidateParty" required>
+            </div>
+
+            <div class="mb-3">
+            <label class="form-label">Candidate Image</label>
+            <input type="file" class="form-control" id="candidateImage" accept="image/*">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+        </form>
+    </div>
 </div>
 
 <script src="app.js"></script>
 <script>
     document.getElementById('app-header').innerHTML = renderPanel();
-
-    function proceed() {
-        const firstname = document.getElementById('inp-firstname').value.trim();
-        const lastname = document.getElementById('inp-lastname').value.trim();
-        const password = document.getElementById('inp-password').value.trim();
-        const btn = document.getElementById('btn-proceed');
-
-        const validFirstname = allowedValues.firstname.includes(firstname);
-        const validLastname = allowedValues.lastname.includes(lastname);
-        const validPassword = allowedValues.password.includes(password);
-
-        if (validFirstname && validFirstname && validFirstname) {
-            window.location.href = 'ballot.html';
-        } else {
-            alert("Invalid Name or Password");
-        }
-    }
 
     function logout() {
         if (!confirm("Are you sure you want to log out?")) {}
@@ -262,112 +142,209 @@
             window.location.href = 'admin-login.html';
     }
 
-    const CSCpres = [
-        { name: "Neil John Sanchez", count: 45, color: "#b01a2e"},
-        { name: "Robb Jason Sedilla", count: 30, color: "#f5c518"}
-    ];
-
-    const CSCvp = [
-        { name: "Neil John Sanchez", count: 55, color: "#b01a2e"},
-        { name: "Robb Jason Sedilla", count: 20, color: "#f5c518"}
-    ];
-
-    const CSCsec = [
-        { name: "Neil John Sanchez", count: 5, color: "#b01a2e"},
-        { name: "Robb Jason Sedilla", count: 33, color: "#f5c518"}
-    ];
-
-    const CSCtres = [
-        { name: "Neil John Sanchez", count: 5, color: "#b01a2e"},
-        { name: "Robb Jason Sedilla", count: 45, color: "#f5c518"}
-    ];
-
-    const CSCaud = [
-        { name: "Neil John Sanchez", count: 5, color: "#b01a2e"},
-        { name: "Robb Jason Sedilla", count: 55, color: "#f5c518"}
-    ];
-
-    const CSCpro = [
-        { name: "Neil John Sanchez", count: 10, color: "#b01a2e"},
-        { name: "Robb Jason Sedilla", count: 56, color: "#f5c518"}
-    ];
-
-    const ENGpres = [
-        { name: "Krystoff Jose", count: 45, color: "#b01a2e"},
-        { name: "Ferdinand Espiritu", count: 30, color: "#f5c518"}
-    ];
-
-    const ENGvp = [
-        { name: "Krystoff Jose", count: 55, color: "#b01a2e"},
-        { name: "Ferdinand Espiritu", count: 20, color: "#f5c518"}
-    ];
-
-    const ENGsec = [
-        { name: "Krystoff Jose", count: 5, color: "#b01a2e"},
-        { name: "Ferdinand Espiritu", count: 33, color: "#f5c518"}
-    ];
-
-    const ENGtres = [
-        { name: "Krystoff Jose", count: 5, color: "#b01a2e"},
-        { name: "Ferdinand Espiritu", count: 45, color: "#f5c518"}
-    ];
-
-    const ENGaud = [
-        { name: "Krystoff Jose", count: 5, color: "#b01a2e"},
-        { name: "Ferdinand Espiritu", count: 55, color: "#f5c518"}
-    ];
-
-    const ENGpro = [
-        { name: "Krystoff Jose", count: 10, color: "#b01a2e"},
-        { name: "Ferdinand Espiritu", count: 56, color: "#f5c518"}
-    ];
-
-    function renderVoteChart(containerId, data) {
-        const container = document.getElementById(containerId);
-        if (!container) return;
+    function renderParties() {
+        const container = document.getElementById("party-list");
         container.innerHTML = "";
+        parties.forEach((p, index) => {
+            const item = document.createElement("div");
+            item.className = "list-group-item d-flex justify-content-between align-items-center";
+            item.innerHTML = `
+            <div class="d-flex align-items-center">
+                <span class="rounded-circle me-2" style="width:20px;height:20px;background-color:${p.color};"></span>
+                <div>
+                <strong>${p.name}</strong><br>
+                <small class="text-muted">${p.slogan}</small>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-sm btn-outline-secondary me-1 edit-party justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M216-216h51l375-375-51-51-375 375v51Zm-72 72v-153l498-498q11-11 23.84-16 12.83-5 27-5 14.16 0 27.16 5t24 16l51 51q11 11 16 24t5 26.54q0 14.45-5.02 27.54T795-642L297-144H144Zm600-549-51-51 51 51Zm-127.95 76.95L591-642l51 51-25.95-25.05Z"/></svg>
+                    <span >Edit</span>
+                </button>
+                <button class="btn btn-sm btn-outline-danger me-1 delete-party justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Zm336-552H312v480h336v-480ZM384-288h72v-336h-72v336Zm120 0h72v-336h-72v336ZM312-696v480-480Z"/></svg>
+                    <span>Delete</span>
+                </button>
+            </div>
+            `;
+            item.querySelector(".delete-party").addEventListener("click", () => {
+                parties.splice(index, 1);
+                renderParties();
+            });
 
-        const maxVotes = Math.max(...data.map(d => d.count));
+            item.querySelector(".edit-party").addEventListener("click", () => {
+                document.getElementById("partyName").value = p.name;
+                document.getElementById("partySlogan").value = p.slogan;
+                document.getElementById("partyColor").value = p.color;
 
-        data.forEach(person => {
-            const row = document.createElement("div");
-            row.className = "vote-row";
+                document.getElementById("partyForm").dataset.editIndex = index;
 
-            const name = document.createElement("div");
-            name.className = "vote-name";
-            name.textContent = person.name;
-
-            const bar = document.createElement("div");
-            bar.className = "vote-bar";
-
-            const fill = document.createElement("div");
-            fill.className = "vote-fill";
-            fill.style.width = (person.count / maxVotes * 100) + "%";
-            fill.textContent = person.count;
-
-            fill.style.backgroundColor = person.color || "#b01a2e";
-
-            bar.appendChild(fill);
-            row.appendChild(name);
-            row.appendChild(bar);
-            container.appendChild(row);
+                const modal = new bootstrap.Modal(document.getElementById("partyModal"));
+                modal.show();
+            });
+            container.appendChild(item);
         });
-
     }
 
-    renderVoteChart("vote-chart-csc1", CSCpres);
-    renderVoteChart("vote-chart-csc2", CSCvp);
-    renderVoteChart("vote-chart-csc3", CSCsec);
-    renderVoteChart("vote-chart-csc4", CSCtres);
-    renderVoteChart("vote-chart-csc5", CSCaud);
-    renderVoteChart("vote-chart-csc6", CSCpro);
+    function renderCandidates() {
+        const container = document.getElementById("candidate-list");
+        container.innerHTML = "";
+        candidates.forEach((c, index) => {
+            const item = document.createElement("div");
+            item.className = "list-group-item d-flex justify-content-between align-items-center";
+            item.innerHTML = `
+            <div class="d-flex align-items-center">
+                <img src="${c.image || '/images/placeholder.png'}" 
+                    alt="${c.name}" 
+                    style="width:100px;height:auto;object-fit:cover;margin-right:10px;" />
+                <div>
+                <strong>${c.name}</strong><br>
+                <small class="text-muted">${c.position} – ${c.party}</small><br>
+                <small class="text-muted">Category: ${c.category}</small>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-sm btn-outline-secondary me-1 edit-candidate justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M216-216h51l375-375-51-51-375 375v51Zm-72 72v-153l498-498q11-11 23.84-16 12.83-5 27-5 14.16 0 27.16 5t24 16l51 51q11 11 16 24t5 26.54q0 14.45-5.02 27.54T795-642L297-144H144Zm600-549-51-51 51 51Zm-127.95 76.95L591-642l51 51-25.95-25.05Z"/></svg>
+                    <span >Edit</span>
+                </button>
+                <button class="btn btn-sm btn-outline-danger me-1 delete-candidate justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Zm336-552H312v480h336v-480ZM384-288h72v-336h-72v336Zm120 0h72v-336h-72v336ZM312-696v480-480Z"/></svg>
+                    <span>Delete</span>
+                </button>
+            </div>
+            `;
 
-    renderVoteChart("vote-chart-eng1", ENGpres);
-    renderVoteChart("vote-chart-eng2", ENGvp);
-    renderVoteChart("vote-chart-eng3", ENGsec);
-    renderVoteChart("vote-chart-eng4", ENGtres);
-    renderVoteChart("vote-chart-eng5", ENGaud);
-    renderVoteChart("vote-chart-eng6", ENGpro);
+            item.querySelector(".delete-candidate").addEventListener("click", () => {
+                candidates.splice(index, 1);
+                renderCandidates();
+            });
+
+            item.querySelector(".edit-candidate").addEventListener("click", () => {
+                document.getElementById("candidateName").value = c.name;
+                document.getElementById("candidatePosition").value = c.position;
+                document.getElementById("candidateCategory").value = c.category;
+                document.getElementById("candidateParty").value = c.party;
+
+                document.getElementById("candidateForm").dataset.editIndex = index;
+
+                const modal = new bootstrap.Modal(document.getElementById("candidateModal"));
+                modal.show();
+            });
+
+            container.appendChild(item);
+        });
+    }
+
+    document.getElementById("partyForm").addEventListener("submit", e => {
+        e.preventDefault();
+        const idx = e.target.dataset.editIndex;
+
+        const newData = {
+            name: document.getElementById("partyName").value,
+            slogan: document.getElementById("partySlogan").value,
+            color: document.getElementById("partyColor").value
+        };
+
+        if (idx !== undefined) 
+        {
+            parties[idx] = newData;
+            delete e.target.dataset.editIndex;
+        } 
+        else 
+        {
+            parties.push(newData);
+        }
+
+        renderParties();
+        bootstrap.Modal.getInstance(document.getElementById("partyModal")).hide();
+        e.target.reset();
+    });
+
+    
+    document.getElementById("candidateForm").addEventListener("submit", e => {
+        e.preventDefault();
+        const idx = e.target.dataset.editIndex;
+
+        const fileInput = document.getElementById("candidateImage");
+        let imagePath = "/images/placeholder.png";
+
+        if (idx !== undefined && candidates[idx]?.image) {
+            imagePath = candidates[idx].image;
+        }
+        if (fileInput.files && fileInput.files[0]) {
+            imagePath = URL.createObjectURL(fileInput.files[0]);
+        }
+
+        const newData = {
+            name: document.getElementById("candidateName").value,
+            position: document.getElementById("candidatePosition").value,
+            category: document.getElementById("candidateCategory").value,
+            party: document.getElementById("candidateParty").value,
+            image: imagePath
+        };
+
+        if (idx !== undefined) {
+            // convert to number before using
+            candidates[Number(idx)] = newData;
+            delete e.target.dataset.editIndex;
+        } else {
+            candidates.push(newData);
+        }
+
+        renderCandidates();
+        bootstrap.Modal.getInstance(document.getElementById("candidateModal")).hide();
+        e.target.reset();
+    });
+
+    let parties = [
+        {
+            name: "Tugon",
+            slogan: "Serving with Integrity",
+            color: "#FFD700"
+        },
+        {
+            name: "Tinig",
+            slogan: "Voice of the Students",
+            color: "#EC2727"
+        }
+    ];
+
+    let candidates = [
+        {
+            name: "Neil John Sanchez",
+            position: "Vice President",
+            category: "Central Student Council",
+            party: "Tinig",
+            image: "images/659787245_3253535624848295_1111995603739053273_n.jpg"
+        },
+        {
+            name: "Robb Jason Sedilla",
+            position: "Vice President",
+            category: "Central Student Council",
+            party: "Tugon",
+            image: "images/292483983_989692231722160_4273033280216145076_n.jpg"
+        },
+        {
+            name: "Ferdinand Espiritu",
+            position: "President",
+            category: "Engineering Council",
+            party: "Tinig",
+            image: "images/481950857_1651856785456375_6404836954798992764_n.jpg"
+        },
+        {
+            name: "Krystoff Jose",
+            position: "President",
+            category: "Engineering Council",
+            party: "Tugon",
+            image: "images/470630389_1306699230785318_8000669650409403876_n.jpg"
+        }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+        renderParties();
+        renderCandidates();
+    });
 
   </script>
 

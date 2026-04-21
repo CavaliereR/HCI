@@ -211,15 +211,11 @@ function renderPanel(activeStep) {
   return `
     <header class="ue-header">
       <div class="logo">${logoHTML}</div>
-      <h1>${SCHOOL_NAME}</h1>
+      <h1>${SCHOOL_NAME} — BALLOT ADMIN CONTROL PANEL</h1>
     </header>
-    <div class="d-flex justify-content-center flex-row gap-5 bg-body-tertiary py-3">
-      <h4>ADMIN CONTROL PANEL</h4>
-    </div>
     <div class="d-flex justify-content-center py-4 flex-row gap-5" style="background-color: white;">
-      <a href="#" class="adminPanelLink">Election Results</a>
-      <a href="#" class="adminPanelLink">Party Settings</a>
-      <a href="#" class="adminPanelLink">Election Settings</a>
+      <a href="admin-results.html" class="adminPanelLink">Election Results</a>
+      <a href="admin-settings.html" class="adminPanelLink">Election Settings</a>
       <a href="#" class="adminPanelLink" disabled onclick="logout ()">Log Out</a>
     </div>`;
 }
