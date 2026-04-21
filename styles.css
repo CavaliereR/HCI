@@ -833,3 +833,44 @@ body {
   margin: 10px auto 0;
   line-height: 1.5;
 }
+
+.vote-row {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.vote-name {
+  width: 150px;
+  font-weight: bold;
+}
+
+.vote-bar {
+  flex: 1;
+  height: 24px;
+  background: #e0e0e0;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.vote-fill {
+  height: 100%;
+  background: #b01a2e;
+  text-align: right;
+  color: #fff;
+  padding-right: 6px;
+  line-height: 24px;
+  border-radius: 4px;
+}
+
+.adminPanelLink {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  transition: color 0.2s
+}
+
+.adminPanelLink:hover {
+  color: #b01a2e;
+}

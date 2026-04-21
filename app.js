@@ -198,6 +198,32 @@ function renderAdmin(activeStep) {
     </div>`;
 }
 
+function renderPanel(activeStep) {
+  const logoHTML = SCHOOL_LOGO
+    ? `<img src="${SCHOOL_LOGO}" width="48" height="48" style="border-radius:50%; object-fit:cover; display:block;"/>`
+    : `<svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="24" fill="#fff"/>
+        <text x="24" y="18" text-anchor="middle" font-size="6.5" font-weight="700" fill="#b01a2e" font-family="serif">UNIVERSITY</text>
+        <text x="24" y="26" text-anchor="middle" font-size="6.5" font-weight="700" fill="#b01a2e" font-family="serif">OF THE</text>
+        <text x="24" y="34" text-anchor="middle" font-size="6.5" font-weight="700" fill="#b01a2e" font-family="serif">EAST</text>
+       </svg>`;
+
+  return `
+    <header class="ue-header">
+      <div class="logo">${logoHTML}</div>
+      <h1>${SCHOOL_NAME}</h1>
+    </header>
+    <div class="d-flex justify-content-center flex-row gap-5 bg-body-tertiary py-3">
+      <h4>ADMIN CONTROL PANEL</h4>
+    </div>
+    <div class="d-flex justify-content-center py-4 flex-row gap-5" style="background-color: white;">
+      <a href="#" class="adminPanelLink">Election Results</a>
+      <a href="#" class="adminPanelLink">Party Settings</a>
+      <a href="#" class="adminPanelLink">Election Settings</a>
+      <a href="#" class="adminPanelLink" disabled onclick="logout ()">Log Out</a>
+    </div>`;
+}
+
 function buildPositionCard(pos, session) {
   const votes = getVotes();
   const selected = votes[pos.id];
